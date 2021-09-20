@@ -1,10 +1,10 @@
 #!/usr/bin/with-contenv bash
 
-PUID=${PUID:-911}
-PGID=${PGID:-911}
+PUID=${PUID:-1000}
+PGID=${PGID:-1000}
 
-groupmod -o -g "$PGID" abc
-usermod -o -u "$PUID" abc
+groupmod -o -g "$PGID" cuong
+usermod -o -u "$PUID" cuong
 
 echo '
 -------------------------------------
@@ -29,8 +29,8 @@ https://www.linuxserver.io/donate/
 GID/UID
 -------------------------------------'
 echo "
-User uid:    $(id -u abc)
-User gid:    $(id -g abc)
+User uid:    $(id -u cuong)
+User gid:    $(id -g cuong)
 -------------------------------------
 "
 
@@ -50,6 +50,6 @@ Some apps might not behave correctly without this
 '
 fi
 
-chown abc:abc /app
-chown abc:abc /config
-chown abc:abc /defaults
+chown "$PGID":"$PGID" /home/cuong/app
+chown "$PGID":"$PGID" /home/cuong/config
+chown "$PGID":"$PGID" /home/cuong/defaults
