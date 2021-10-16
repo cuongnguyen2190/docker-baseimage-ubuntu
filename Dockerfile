@@ -94,7 +94,7 @@ RUN \
 	tzdata && \
  echo "**** generate locale ****" && \
  locale-gen en_US.UTF-8 && \
- echo "**** create abc user and make our folders ****" && \
+ echo "**** create cuong user and make our folders ****" && \
  groupadd -g 1000 cuong && \
  useradd -d /home/cuong -u 1000 -g 1000 -m -s /usr/bin/bash cuong && \
  mkdir -p \
